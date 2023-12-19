@@ -1,13 +1,22 @@
+import React from "react";
+import "./InputFiled.css";
 
-import './InputFiled.css'
-
-function InputField() {
-  return (
-      <form action="" className='input'>
-          <input type="input" placeholder='Enter a task' className='input_box' />
-          <button className='input_submit' type='submit'>Go</button>
-      </form>
-  )
+interface props {
+  todo: string;
+  setTodo: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default InputField
+function InputField({ todo, setTodo }: props) {
+  return (
+    <form action="" className="input">
+          <input type="input" value={todo} onChange={
+              (e) => setTodo(e.target.value)
+      } placeholder="Enter a task" className="input_box" />
+      <button className="input_submit" type="submit">
+        Go
+      </button>
+    </form>
+  );
+}
+
+export default InputField;
