@@ -3,12 +3,13 @@ import "./InputFiled.css";
 
 interface props {
   todo: string;
-  setTodo: React.Dispatch<React.SetStateAction<string>>;
+    setTodo: React.Dispatch<React.SetStateAction<string>>;
+    handleAdd: (e: React.FormEvent) => {};
 }
 
-function InputField({ todo, setTodo }: props) {
+function InputField({ todo, setTodo, handleAdd }: props) {
   return (
-    <form action="" className="input">
+    <form action="" className="input" onSubmit={handleAdd}>
           <input type="input" value={todo} onChange={
               (e) => setTodo(e.target.value)
       } placeholder="Enter a task" className="input_box" />
