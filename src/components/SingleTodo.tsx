@@ -15,10 +15,8 @@ type Props = {
 };
 
 function SingleTodo({ todo, todos, setTodo }: Props) {
-
   const [edit, setEdit] = useState<boolean>(false);
-  const [editTodo, setEditTodo] = useState<string>(todo.todo)
-
+  const [editTodo, setEditTodo] = useState<string>(todo.todo);
 
   const handleDone = (id: number) => {
     setTodo(
@@ -32,16 +30,39 @@ function SingleTodo({ todo, todos, setTodo }: Props) {
     setTodo(todos.filter((todo) => todo.id !== id));
   };
 
+  const handleEdit = (e:React.FormEvent<HTMLFormElement>, id:number) => {
+    e.preventDefault();
+    
+    setTodo(todos.map((todo) => (
+      todo.id == id ? { ...todo, todo: editTodo } : todo
+    )));
+    setEdit(false)
+  }
+
   return (
-    <form className="todos_single">
-      {todo.isDone ? (
+    <form className="todos_single" onSubmit={(e)=>handleEdit(e, todo.id)}>
+      {edit ? (
+        <input
+          type="text"
+          value={editTodo}
+          onChange={(e) => setEditTodo(e.target.value)}
+          className="todos_single_text"
+        />
+      ) : todo.isDone ? (
         <s className="todos_single_text">{todo.todo}</s>
       ) : (
         <span className="todos_single_text">{todo.todo}</span>
       )}
 
       <div>
-        <span className="icon">
+        <span
+          className="icon"
+          onClick={() => {
+            if (!edit && !todo.isDone) {
+              setEdit(!edit);
+            }
+          }}
+        >
           <FontAwesomeIcon icon={faPenToSquare} />
         </span>
         <span className="icon" onClick={() => handleDelete(todo.id)}>
