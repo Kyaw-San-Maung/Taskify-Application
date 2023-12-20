@@ -1,0 +1,44 @@
+.todos_single {
+    display: flex;
+    width: 29.5%;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    background-color: yellowgreen;
+}
+
+.todos_single_text{
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+}
+
+.todos_single_text:focus{
+    outline: none;
+}
+
+.icon{
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media(max-width:1200px) {
+    .todos_single{
+        width: 40%;
+    }
+}
+
+@media (max-width: 700px){
+    .input{
+        width: 95%;
+    }
+    .todos{
+        width: 95%;
+    }
+    .todos_single{
+        width: 100%;
+    }
+
+}
