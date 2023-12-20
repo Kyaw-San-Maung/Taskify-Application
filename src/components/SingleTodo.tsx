@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
@@ -7,7 +7,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Todo } from "../model";
 import "./singleTodo.css";
-import TodoList from "./TodoList";
 
 type Props = {
   todo: Todo;
@@ -16,12 +15,21 @@ type Props = {
 };
 
 function SingleTodo({ todo, todos, setTodo }: Props) {
+
+  const [edit, setEdit] = useState<boolean>(false);
+  const [editTodo, setEditTodo] = useState<string>(todo.todo)
+
+
   const handleDone = (id: number) => {
     setTodo(
       todos.map((todo) =>
         todo.id == id ? { ...todo, isDone: !todo.isDone } : todo
       )
     );
+  };
+
+  const handleDelete = (id: number) => {
+    setTodo(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -36,7 +44,7 @@ function SingleTodo({ todo, todos, setTodo }: Props) {
         <span className="icon">
           <FontAwesomeIcon icon={faPenToSquare} />
         </span>
-        <span className="icon">
+        <span className="icon" onClick={() => handleDelete(todo.id)}>
           <FontAwesomeIcon icon={faTrash} />
         </span>
         <span className="icon" onClick={() => handleDone(todo.id)}>
