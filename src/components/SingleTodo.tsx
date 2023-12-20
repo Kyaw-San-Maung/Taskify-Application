@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
@@ -39,10 +39,20 @@ function SingleTodo({ todo, todos, setTodo }: Props) {
     setEdit(false)
   }
 
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(
+    () => {
+      inputRef.current?.focus();
+    }, [edit]
+  )
+
   return (
     <form className="todos_single" onSubmit={(e)=>handleEdit(e, todo.id)}>
       {edit ? (
         <input
+          ref={inputRef}
           type="text"
           value={editTodo}
           onChange={(e) => setEditTodo(e.target.value)}
