@@ -6,3 +6,21 @@
     align-items: flex-start;
 }
 
+.todos{
+    display: flex;
+    width: 47.5%;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: rgb(64, 219, 147);
+}
+
+.todos_heading{
+    font-size: 30px;
+    color: white;
+}
+
+.remove{
+    background-color: rgb(233, 84, 84);
+}
+

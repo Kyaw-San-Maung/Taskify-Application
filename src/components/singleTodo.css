@@ -1,10 +1,15 @@
 .todos_single {
     display: flex;
-    width: 29.5%;
     border-radius: 5px;
     padding: 20px;
     margin-top: 15px;
     background-color: yellowgreen;
+    transition: 0.2s;
+}
+
+.todos_single:hover{
+    box-shadow: 0 0 5px black;
+    transform: scale(1.03);
 }
 
 .todos_single_text{
@@ -24,9 +29,9 @@
     cursor: pointer;
 }
 
-@media(max-width:1200px) {
-    .todos_single{
-        width: 40%;
+@media(max-width:1100px) {
+    .todos{
+        width: 45%;
     }
 }
 
@@ -36,9 +41,14 @@
     }
     .todos{
         width: 95%;
+        margin-bottom: 10px;
     }
-    .todos_single{
-        width: 100%;
+    
+    .container{
+        width: 95%;
+        flex-direction: column;
     }
 
 }
+
+
