@@ -1,6 +1,7 @@
 import React from "react";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
+import './TodoList.css'
 
 interface Props {
   todos: Todo[];
@@ -12,14 +13,34 @@ export default function TodoList({ todos, setTodos }: Props) {
     <div className="todos">
       {todos.map((todo) => {
         return (
-          <>
-            <SingleTodo
-              todo={todo}
-              key={todo.id}
-              todos={todos}
-              setTodo={setTodos}
-            />
-          </>
+          <div className="container">
+            <div className="todos">
+              <span className="todos_heading">Active Tasks</span>
+              {
+                todos.map((todo) => (
+                  <SingleTodo
+                  todo={todo}
+                  key={todo.id}
+                  todos={todos}
+                  setTodo={setTodos}
+                />
+                ))
+              }
+            </div>
+            <div className="todos remove">
+            <span className="todos_heading">Completed Tasks</span>
+              {
+                todos.map((todo) => (
+                  <SingleTodo
+                  todo={todo}
+                  key={todo.id}
+                  todos={todos}
+                  setTodo={setTodos}
+                />
+                ))
+              }
+            </div>
+          </div>
         );
       })}
     </div>
