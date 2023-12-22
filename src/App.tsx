@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
 import { Todo } from "./model";
@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [CompletedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
-  const handleAdd = (e: React.FormEvent) => {
+  const handleAdd = (e: React.FormEvent) =>  {
     e.preventDefault();
 
     if (todo) {
@@ -20,7 +20,8 @@ function App() {
   };
 
   return (
-    <DragDropContext onDragEnd={() => {}}>
+    <React.StrictMode>
+      <DragDropContext onDragEnd={() => {}}>
       <div className="App">
         <span className="heading">Taskify</span>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
@@ -32,6 +33,8 @@ function App() {
         />
       </div>
     </DragDropContext>
+    </React.StrictMode>
+    
   );
 }
 
