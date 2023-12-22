@@ -12,6 +12,10 @@
     transform: scale(1.03);
 }
 
+.drag{
+    box-shadow: 0 0 20px black;
+}
+
 .todos_single_text{
     flex: 1;
     padding: 5px;
