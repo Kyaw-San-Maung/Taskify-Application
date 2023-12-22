@@ -48,6 +48,7 @@ function SingleTodo({ index, todo, todos, setTodo }: Props) {
   }, [edit]);
 
   return (
+    <StrictMode>
       <Draggable draggableId={todo.id.toString()} index={index}>
         {(provided) => (
           <form
@@ -92,7 +93,7 @@ function SingleTodo({ index, todo, todos, setTodo }: Props) {
           </form>
         )}
       </Draggable>
-    
+      </StrictMode>
   );
 }
 

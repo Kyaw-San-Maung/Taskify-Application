@@ -1,4 +1,5 @@
-import React, { StrictMode } from "react";
+
+import { StrictMode } from "react";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
 import "./TodoList.css";
@@ -18,9 +19,9 @@ export default function TodoList ({
   setCompletedTodos,
 }: Props) {
   return (
-  
+    <StrictMode>
     <div className="container">
-      
+
       <Droppable droppableId="TodosList">
         {(provided) => (
           <div
@@ -38,6 +39,7 @@ export default function TodoList ({
                 setTodo={setTodos}
               />
             ))}
+            {provided.placeholder}
           </div>
         )}
       </Droppable>
@@ -59,10 +61,11 @@ export default function TodoList ({
                 setTodo={setCompletedTodos}
               />
             ))}
+            {provided.placeholder}
           </div>
         )}
       </Droppable>
-      </div>
-    
+    </div>
+    </StrictMode>
   );
 }

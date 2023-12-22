@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [CompletedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
-  const handleAdd = (e: React.FormEvent) =>  {
+  const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (todo) {
@@ -22,19 +22,18 @@ function App() {
   return (
     <React.StrictMode>
       <DragDropContext onDragEnd={() => {}}>
-      <div className="App">
-        <span className="heading">Taskify</span>
-        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-        <TodoList
-          todos={todos}
-          setTodos={setTodos}
-          completedTodos={CompletedTodos}
-          setCompletedTodos={setCompletedTodos}
-        />
-      </div>
-    </DragDropContext>
+        <div className="App">
+          <span className="heading">Taskify</span>
+          <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+          <TodoList
+            todos={todos}
+            setTodos={setTodos}
+            completedTodos={CompletedTodos}
+            setCompletedTodos={setCompletedTodos}
+          />
+        </div>
+      </DragDropContext>
     </React.StrictMode>
-    
   );
 }
 
