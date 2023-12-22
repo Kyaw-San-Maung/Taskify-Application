@@ -48,11 +48,11 @@ function SingleTodo({ index, todo, todos, setTodo }: Props) {
   }, [edit]);
 
   return (
-    <StrictMode>
+    <React.StrictMode>
       <Draggable draggableId={todo.id.toString()} index={index}>
-        {(provided) => (
+        {(provided, snapshot) => (
           <form
-            className="todos_single"
+            className={`todos_single ${snapshot.isDragging? 'drag' : ''}`}
             onSubmit={(e) => handleEdit(e, todo.id)}
             ref={provided.innerRef}
             {...provided.draggableProps}
@@ -93,7 +93,7 @@ function SingleTodo({ index, todo, todos, setTodo }: Props) {
           </form>
         )}
       </Draggable>
-      </StrictMode>
+      </React.StrictMode>
   );
 }
 

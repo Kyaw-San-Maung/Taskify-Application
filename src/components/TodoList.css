@@ -12,7 +12,7 @@
     flex-direction: column;
     padding: 15px;
     border-radius: 6px;
-    background-color: rgb(64, 219, 147);
+    background-color: rgb(58, 205, 137);
 }
 
 .todos_heading{
@@ -21,6 +21,13 @@
 }
 
 .remove{
-    background-color: rgb(233, 84, 84);
+    background-color: rgb(207, 60, 60);
 }
 
+.dragactive{
+    background-color: rgb(59, 243, 157);
+}
+
+.dragcomplete{
+    background-color: rgb(255, 69, 69);
+}

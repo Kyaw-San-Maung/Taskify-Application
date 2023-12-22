@@ -1,4 +1,3 @@
-
 import { StrictMode } from "react";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
@@ -12,20 +11,18 @@ interface Props {
   setCompletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
-export default function TodoList ({
+export default function TodoList({
   todos,
   setTodos,
   completedTodos,
   setCompletedTodos,
 }: Props) {
   return (
-    <StrictMode>
     <div className="container">
-
       <Droppable droppableId="TodosList">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="todos"
+            className={`todos ${snapshot.isDraggingOver ? "dragactive" : ""}`}
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
@@ -45,9 +42,9 @@ export default function TodoList ({
       </Droppable>
 
       <Droppable droppableId="TodosRemove">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="todos remove"
+            className={`todos remove ${snapshot.isDraggingOver? "dragcomplete" : ''}`}
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
@@ -66,6 +63,5 @@ export default function TodoList ({
         )}
       </Droppable>
     </div>
-    </StrictMode>
   );
 }

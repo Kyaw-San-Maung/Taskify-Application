@@ -32,7 +32,7 @@ function App() {
     let add,
       active = todos,
       complete = CompletedTodos;
-    
+
     if (source.droppableId === "TodosList") {
       add = active[source.index];
       active.splice(source.index, 1);
@@ -42,14 +42,13 @@ function App() {
     }
 
     if (destination.droppableId === "TodosList") {
-      active.splice(destination.index, 0, add)
+      active.splice(destination.index, 0, add);
     } else {
-      complete.splice(destination.index, 0, add)
+      complete.splice(destination.index, 0, add);
     }
 
-    setCompletedTodos(complete)
-    setTodos(active)
-
+    setCompletedTodos(complete);
+    setTodos(active);
   };
 
   return (
