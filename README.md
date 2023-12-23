@@ -24,8 +24,6 @@ export default {
   },
 }
 
-![screencapture-localhost-5173-2023-12-23-15_26_47](https://github.com/Kyaw-San-Maung/Taskify-Application/assets/138513535/87ac941e-93e0-4e6d-a7d1-c807cf16b1dc)
-
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
