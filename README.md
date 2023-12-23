@@ -7,6 +7,11 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+
+## Project Final View
+
+![screencapture-localhost-5173-2023-12-23-15_26_47](https://github.com/Kyaw-San-Maung/Taskify-Application/assets/138513535/0ff180a0-56be-4dec-8e68-b22c252eca2f)
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
@@ -28,4 +33,3 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-![screencapture-localhost-5173-2023-12-23-15_26_47](https://github.com/Kyaw-San-Maung/Taskify-Application/assets/138513535/0ff180a0-56be-4dec-8e68-b22c252eca2f)
