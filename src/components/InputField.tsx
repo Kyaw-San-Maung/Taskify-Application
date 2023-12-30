@@ -4,7 +4,7 @@ import "./InputFiled.css";
 interface props {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
-  handleAdd: (e: React.FormEvent) => {};
+  handleAdd: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 function InputField({ todo, setTodo, handleAdd }: props) {

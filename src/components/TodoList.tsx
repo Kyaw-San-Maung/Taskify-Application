@@ -20,7 +20,7 @@ export default function TodoList({
 }: Props) {
   return (
     <div className="container">
-      
+      <React.StrictMode>
       <Droppable droppableId="TodosList">
         {(provided, snapshot) => (
           <div
@@ -64,7 +64,7 @@ export default function TodoList({
           </div>
         )}
         </Droppable>
-        
+        </React.StrictMode>
     </div>
   );
 }

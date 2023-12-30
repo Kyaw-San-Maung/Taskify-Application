@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [CompletedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
-  const handleAdd = (e: React.FormEvent) => {
+  const handleAdd = (e: React.FormEvent<HTMLFormElement>)  => {
     e.preventDefault();
 
     if (todo) {
