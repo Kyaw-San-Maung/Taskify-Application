@@ -1,4 +1,5 @@
-import React, { StrictMode } from "react";
+
+import React from "react";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
 import "./TodoList.css";
@@ -19,7 +20,7 @@ export default function TodoList({
 }: Props) {
   return (
     <div className="container">
-      <React.StrictMode>
+      
       <Droppable droppableId="TodosList">
         {(provided, snapshot) => (
           <div
@@ -63,7 +64,7 @@ export default function TodoList({
           </div>
         )}
         </Droppable>
-        </React.StrictMode>
+        
     </div>
   );
 }

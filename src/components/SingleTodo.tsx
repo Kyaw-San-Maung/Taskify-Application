@@ -1,4 +1,4 @@
-import React, {  useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
@@ -48,7 +48,7 @@ function SingleTodo({ index, todo, todos, setTodo }: Props) {
   }, [edit]);
 
   return (
-    <React.StrictMode>
+    
       <Draggable draggableId={todo.id.toString()} index={index}>
         {(provided, snapshot) => (
           <form
@@ -93,7 +93,7 @@ function SingleTodo({ index, todo, todos, setTodo }: Props) {
           </form>
         )}
       </Draggable>
-      </React.StrictMode>
+     
   );
 }
 
